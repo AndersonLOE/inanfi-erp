@@ -60,7 +60,7 @@ export function ModuleSwitcher({
             </DropdownMenuLabel>
             {modules.map((module, index) => (
               <DropdownMenuItem
-                key={module.name}
+                key={index}
                 onClick={() => setActiveModule(module)}
                 className="gap-2 p-2"
               >

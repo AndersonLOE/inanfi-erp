@@ -22,6 +22,7 @@ export const useAuth = create<AuthState>()(persist((set) => ({
   error: null,
 
   login: async (credentials) => {
+    console.log(credentials);
     return false;
   },
 
@@ -30,14 +31,18 @@ export const useAuth = create<AuthState>()(persist((set) => ({
   },
 
   checkAuth: async (cookie) => {
+    console.log(cookie);
     return false;
   },
 
   setLoading: (loading) => {
+    console.log(loading);
+    set({ isLoading: loading });
     return;
   },
 
   setError: (error) => {
+    console.log(error);
     return;
   }
 }), {

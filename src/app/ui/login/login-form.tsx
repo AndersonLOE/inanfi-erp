@@ -10,6 +10,7 @@ import { InputForm } from '@/app/ui/common/input-form';
 import { useAuth } from '@/lib/stores/auth.store';
 import { authDefaultValues, authSchema } from '@/lib/schemas/auth.schema';
 import { zodResolver } from '@hookform/resolvers/zod';
+import Image from 'next/image';
 
 export function LoginForm({
                             className,
@@ -23,6 +24,7 @@ export function LoginForm({
 
   async function onSubmit(values: z.infer<typeof authSchema>) {
     console.log(values);
+    login(values)
   }
 
   return (
@@ -66,10 +68,12 @@ export function LoginForm({
             </form>
           </Form>
           <div className="relative hidden bg-muted md:block">
-            <img
+            <Image
               src="/gallery.png"
               alt="Image"
               className="absolute inset-0 h-full w-full object-cover object-center dark:brightness-[0.2] dark:grayscale"
+              width={360}
+              height={199}
             />
           </div>
         </CardContent>
